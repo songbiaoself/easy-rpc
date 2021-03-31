@@ -13,7 +13,7 @@ jdk1.8+maven+socket+fastJson
 #### 安装教程
 
 1. 需提前安装好maven
-1. 导入开发工具即可
+2. 导入开发工具即可
 
 
 #### 使用说明
@@ -24,10 +24,11 @@ jdk1.8+maven+socket+fastJson
 
 #### 运行demo
 
-- 1. server
+1. 服务端
 ![服务端](https://images.gitee.com/uploads/images/2021/0331/222322_376b61ed_5489834.png "屏幕截图.png")
 
-- 2. client
+
+2. 客户端
 ![客户端](https://images.gitee.com/uploads/images/2021/0331/222248_f2f2c51a_5489834.png "屏幕截图.png")
 
 #### 参与贡献

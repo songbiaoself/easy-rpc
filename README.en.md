@@ -29,6 +29,7 @@ jdk1.8+maven+socket+fastjson
 
 
 2. 客户端
+![客户端web](https://images.gitee.com/uploads/images/2021/0331/225736_101928a3_5489834.png "客户端web.png")
 ![客户端](https://images.gitee.com/uploads/images/2021/0331/222248_f2f2c51a_5489834.png "客户端.png")
 
 #### 目前已知存在问题

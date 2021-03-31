@@ -4,8 +4,8 @@
 自己动手实现一个简单的rpc框架
 
 #### 软件架构
-jdk1.8+maven+socket+fastJson
-![思维导图](https://images.gitee.com/uploads/images/2021/0331/221757_8df57b82_5489834.png "屏幕截图.png")
+jdk1.8+maven+socket+fastjson
+![思维导图](https://images.gitee.com/uploads/images/2021/0331/221757_8df57b82_5489834.png "RPC思维导图.png")
 
 通信采用io对象流的方式
 
@@ -25,11 +25,16 @@ jdk1.8+maven+socket+fastJson
 #### 运行demo
 
 1. 服务端
-![服务端](https://images.gitee.com/uploads/images/2021/0331/222322_376b61ed_5489834.png "屏幕截图.png")
+![服务端](https://images.gitee.com/uploads/images/2021/0331/222322_376b61ed_5489834.png "服务端.png")
 
 
 2. 客户端
-![客户端](https://images.gitee.com/uploads/images/2021/0331/222248_f2f2c51a_5489834.png "屏幕截图.png")
+![客户端](https://images.gitee.com/uploads/images/2021/0331/222248_f2f2c51a_5489834.png "客户端.png")
+
+#### 目前已知存在问题
+
+1. 方法反射包装类的问题
+2. 方法反射多态的问题
 
 #### 参与贡献
 

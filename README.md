@@ -8,14 +8,22 @@ jdk1.8+maven+socket+fastJson
 ![思维导图](https://images.gitee.com/uploads/images/2021/0331/221757_8df57b82_5489834.png "屏幕截图.png")
 
 #### 安装教程
-1.需提前安装好maven
-2.导入开发工具即可
+
+1. 需提前安装好maven
+1. 导入开发工具即可
+
 
 #### 使用说明
 
 1.  先启动服务端 后启动客户端
 2.  编写rpc测试参考客户端示例
 3.  编写服务端新接口参考服务端接口实例  
+
+#### 运行demo
+1. server
+![服务端](https://images.gitee.com/uploads/images/2021/0331/222209_c120a4dc_5489834.png "屏幕截图.png")
+2. client
+![客户端](https://images.gitee.com/uploads/images/2021/0331/222248_f2f2c51a_5489834.png "屏幕截图.png")
 
 #### 参与贡献
 

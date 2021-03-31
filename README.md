@@ -4,20 +4,18 @@
 手动实现一个简单的rpc框架
 
 #### 软件架构
-软件架构说明
-
+jdk1.8+maven+socket+fastJson
+![思维导图](https://images.gitee.com/uploads/images/2021/0331/221757_8df57b82_5489834.png "屏幕截图.png")
 
 #### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.需提前安装好maven
+2.导入开发工具即可
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  先启动服务端 后启动客户端
+2.  编写rpc测试参考客户端示例
+3.  编写服务端新接口参考服务端接口实例  
 
 #### 参与贡献
 

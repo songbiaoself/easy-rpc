@@ -21,7 +21,7 @@ jdk1.8+maven+socket+fastJson
 
 #### 运行demo
 1. server
-![服务端](https://images.gitee.com/uploads/images/2021/0331/222209_c120a4dc_5489834.png "屏幕截图.png")
+![服务端](https://images.gitee.com/uploads/images/2021/0331/222322_376b61ed_5489834.png "屏幕截图.png")
 2. client
 ![客户端](https://images.gitee.com/uploads/images/2021/0331/222248_f2f2c51a_5489834.png "屏幕截图.png")
 

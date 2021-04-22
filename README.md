@@ -7,7 +7,7 @@
 jdk1.8+maven+socket+fastjson
 ![思维导图](https://images.gitee.com/uploads/images/2021/0331/221757_8df57b82_5489834.png "RPC思维导图.png")
 
-通信采用io对象流的方式
+通信采用tcp协议
 
 
 #### 安装教程

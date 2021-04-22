@@ -4,10 +4,12 @@ import com.alibaba.fastjson.JSON;
 import com.sn.bean.Data;
 
 import java.io.*;
-import java.lang.reflect.Method;
-import java.net.InetAddress;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodType;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import static java.lang.invoke.MethodHandles.lookup;
 
 /**
  * @Description: 服务器socket
@@ -19,7 +21,7 @@ public class RPCServer{
 
     public static void start(){
         System.out.println("正在启动服务器:[127.0.0.1:"+PORT+"]");
-        try (ServerSocket serverSocket = new ServerSocket(PORT,5, InetAddress.getByName("127.0.0.1"));
+        try (ServerSocket serverSocket = new ServerSocket(PORT,5);
              Socket socket =  serverSocket.accept();
              OutputStream outputStream = socket.getOutputStream();
              InputStream inputStream = socket.getInputStream();
@@ -40,26 +42,19 @@ public class RPCServer{
 
     /**
      * 反射调用实现方法
+     * 用了invokeDynamic动态调用的方式解决了反射包装、多态的问题
      * @param data
      * @return
      */
     public static Object methodInvoke(Data data){
-        Class type = data.getType();
-        String methodName = data.getMethodName();
-        Object[] objects = data.getArgs();
-        Method method = null;
-        Class[] args = null;
+        //返回类型加参数类型
+        MethodType methodType = MethodType.methodType(data.getReturnType(), data.getParameterTypes());
         try {
-            if (objects.length > 0) {
-                args = new Class[objects.length];
-                for (int i = 0; i < objects.length; i++) {
-                    args[i] = objects[i].getClass();
-                }
-            }
-            method = type.getMethod(methodName, args);
-            return method.invoke(type.newInstance(),objects);
-        } catch (Exception e) {
-            e.printStackTrace();
+            MethodHandle methodHandle = lookup().findVirtual(data.getType(), data.getMethodName(), methodType)
+                    .bindTo(data.getType().newInstance());//除了static方法 每个方法都有一个隐式参数 如 this
+            return methodHandle.invokeWithArguments(data.getArgs());
+        }catch (Throwable throwable) {
+            throwable.printStackTrace();
         }
         return null;
     }

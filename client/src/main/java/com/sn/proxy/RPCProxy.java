@@ -37,7 +37,7 @@ public class RPCProxy implements InvocationHandler {
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream)
         ) {
             //===============发送====================
-            Data data = new Data(rpc.type(),method.getName(),args);
+            Data data = new Data(rpc.type(),method.getReturnType(),method.getName(),method.getParameterTypes(),args);
             objectOutputStream.writeObject(data);
             //==================结束=======================
             //阻塞等待响应
@@ -46,5 +46,16 @@ public class RPCProxy implements InvocationHandler {
         }
         System.out.println("接受服务端["+rpc.IP()+":"+rpc.port()+"]的消息:"+JSON.toJSONString(result));
         return result;
+    }
+
+    public Class[] covertToClass(Object[] objects) {
+        if (objects == null || objects.length==0) {
+            return null;
+        }
+        Class[] classes = new Class[objects.length];
+        for (int i = 0; i < objects.length ; i++) {
+            classes[i] = objects[i].getClass();
+        }
+        return classes;
     }
 }

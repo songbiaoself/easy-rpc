@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  * @Description: 接口实现
- * @Author: songbiao
+ * @Author: 公众号: CodeRevolt
  */
 public class ServerApiImpl implements ServerApi {
     @Override
@@ -38,7 +38,7 @@ public class ServerApiImpl implements ServerApi {
     @Override
     public Object test4(HashMap map) {
         System.out.println(map);
-        map.put("comment", "多态好像有点问题,试试不是多态");
+        map.put("comment", "多态测试");
         return map;
     }
 }

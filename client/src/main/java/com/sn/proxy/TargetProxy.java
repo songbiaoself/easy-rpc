@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 
 /**
  * @Description: web代理
- * @Author: songbiao
+ * @Author: 公众号: CodeRevolt
  */
 public class TargetProxy implements InvocationHandler {
 

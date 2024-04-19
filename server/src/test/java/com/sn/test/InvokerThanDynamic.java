@@ -13,7 +13,7 @@ import static java.lang.invoke.MethodHandles.lookup;
 
 /**
  * @Description: invoke与动态调用比较
- * @Author: songbiao
+ * @Author: 公众号: CodeRevolt
  */
 public class InvokerThanDynamic {
 

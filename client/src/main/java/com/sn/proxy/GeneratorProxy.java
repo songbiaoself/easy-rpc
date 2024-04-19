@@ -6,7 +6,7 @@ import java.lang.reflect.Proxy;
 
 /**
  * @Description: 生成代理类
- * @Author: songbiao
+ * @Author: 公众号: CodeRevolt
  */
 public class GeneratorProxy {
 
@@ -15,16 +15,16 @@ public class GeneratorProxy {
         Object proxy = Proxy.newProxyInstance(
                   object.getClassLoader()//指定类的加载器
                 , new Class[]{object} // 代理需要实现的接口，可指定多个，这是一个数组
-                , new RPCProxy(rpc)); // 代理对象处理器
+                , new RPCProxy(rpc, object)); // 代理对象处理器
         return proxy;
     }
 
-    public static Object getProxy(Object object){
+    public static <T> T getProxy(Object object){
         Object proxy = Proxy.newProxyInstance(
                  object.getClass().getClassLoader()//指定类的加载器
                 ,object.getClass().getInterfaces() // 代理需要实现的接口，可指定多个，这是一个数组
                 , new TargetProxy(object)); // 代理对象处理器
-        return proxy;
+        return (T) proxy;
     }
 
 }

@@ -4,18 +4,43 @@ import java.io.Serializable;
 
 /**
  * @Description: 数据传输实体类
- * @Author: songbiao
+ * @Author: 公众号: CodeRevolt
  */
 public class Data implements Serializable {
 
+    /**
+     * 接口名称
+     */
     private Class type;
+
+    /**
+     * 接口实现class类名
+     */
+    private String name;
+
+    /**
+     * 返回类型
+     */
     private Class returnType;
+
+    /**
+     * 方法名称
+     */
     private String methodName;
+
+    /**
+     *参数类型
+     */
     private Class[] parameterTypes;
+
+    /**
+     * 参数
+     */
     private Object[] args;
 
-    public Data(Class type, Class returnType, String methodName,Class[] parameterTypes, Object[] args) {
+    public Data(Class type, String name, Class returnType, String methodName, Class[] parameterTypes, Object[] args) {
         this.type = type;
+        this.name = name;
         this.returnType = returnType;
         this.methodName = methodName;
         this.parameterTypes = parameterTypes;
@@ -60,5 +85,13 @@ public class Data implements Serializable {
 
     public void setArgs(Object[] args) {
         this.args = args;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

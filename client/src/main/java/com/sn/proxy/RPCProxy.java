@@ -14,14 +14,16 @@ import java.net.Socket;
 
 /**
  * @Description: rpc代理类
- * @Author: songbiao
+ * @Author: 公众号: CodeRevolt
  */
 public class RPCProxy implements InvocationHandler {
 
     private RPC rpc;
+    private Class type;
 
-    public RPCProxy(RPC rpc) {
+    public RPCProxy(RPC rpc, Class type) {
         this.rpc = rpc;
+        this.type = type;
     }
 
     @Override
@@ -37,7 +39,7 @@ public class RPCProxy implements InvocationHandler {
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream)
         ) {
             //===============发送====================
-            Data data = new Data(rpc.type(),method.getReturnType(),method.getName(),method.getParameterTypes(),args);
+            Data data = new Data(type, rpc.value(), method.getReturnType(), method.getName(), method.getParameterTypes(), args);
             objectOutputStream.writeObject(data);
             //==================结束=======================
             //阻塞等待响应
